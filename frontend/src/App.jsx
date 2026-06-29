@@ -598,7 +598,7 @@ function App() {
   useEffect(() => {
     const fetchTelemetry = async () => {
       try {
-        const response = await fetch('/api/telemetry');
+        const response = await fetch('https://nsnl-backend.onrender.com/api/telemetry');
         const payload = await response.json();
         if (payload) {
           setData((prev) => ({ ...prev, ...payload }));
