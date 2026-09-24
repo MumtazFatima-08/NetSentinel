@@ -17,7 +17,7 @@ The project combines a Python/Flask monitoring backend with a React dashboard to
 
 ---
 
-## ✦ What Problem Does It Solve?
+## ✦ The Problem
 
 Security telemetry can quickly become difficult to interpret when system health, connected devices, network traffic, and security findings live in separate places.
 
@@ -31,7 +31,7 @@ NetSentinel brings these signals into one operational interface so an analyst ca
 
 ---
 
-## 🧭 Platform at a Glance
+## 🧭 Product at a Glance
 
 | Module | Purpose |
 |---|---|
@@ -47,32 +47,34 @@ NetSentinel brings these signals into one operational interface so an analyst ca
 
 # 🖥️ Product Showcase
 
-The interface is organized as a lightweight SOC workflow rather than a single dashboard screen.
+> **The deployed interface, documented module by module.**
+
+The interface is organized around a lightweight SOC workflow — moving from system visibility to investigation context instead of presenting isolated metrics.
 
 ### Dashboard + Device Discovery
 
 | Network Operations Center | Endpoint Visibility |
 |---|---|
-| <img src="./docs/screenshots/dashboard.webp" alt="NetSentinel Dashboard" width="100%"> | <img src="./docs/screenshots/devices.webp" alt="NetSentinel Device Discovery" width="100%"> |
+| <img src="./docs/screenshots/dashboard.jpg" alt="NetSentinel Dashboard" width="100%"> | <img src="./docs/screenshots/devices.jpg" alt="NetSentinel Device Discovery" width="100%"> |
 | **Network health, telemetry, active connections and threat queue.** | **Connected endpoints, interfaces, packet counts and asset posture.** |
 
 ### Traffic + Threat Detection
 
 | Traffic Monitoring | Threat Investigation |
 |---|---|
-| <img src="./docs/screenshots/traffic.webp" alt="NetSentinel Traffic Monitor" width="100%"> | <img src="./docs/screenshots/threats.webp" alt="NetSentinel Threat Detection" width="100%"> |
+| <img src="./docs/screenshots/traffic.jpg" alt="NetSentinel Traffic Monitor" width="100%"> | <img src="./docs/screenshots/threats.jpg" alt="NetSentinel Threat Detection" width="100%"> |
 | **Bandwidth movement, upload/download activity and packet trends.** | **Severity, affected device, timestamp, recommendation and explanation.** |
 
 ### Analytics + Reporting
 
 | Operational Analytics | Reporting |
 |---|---|
-| <img src="./docs/screenshots/analytics.webp" alt="NetSentinel Analytics" width="100%"> | <img src="./docs/screenshots/reports.webp" alt="NetSentinel Reports" width="100%"> |
+| <img src="./docs/screenshots/analytics.jpg" alt="NetSentinel Analytics" width="100%"> | <img src="./docs/screenshots/reports.jpg" alt="NetSentinel Reports" width="100%"> |
 | **Trend-oriented views for monitoring activity.** | **Export-oriented PDF and CSV workflow.** |
 
 ### Monitoring Preferences
 
-<img src="./docs/screenshots/settings.webp" alt="NetSentinel Settings" width="100%">
+<img src="./docs/screenshots/settings.jpg" alt="NetSentinel Settings" width="100%">
 
 > **Appearance and refresh controls can be configured from the monitoring settings.**
 
@@ -104,7 +106,7 @@ Outbound throughput exceeding a monitored baseline.
 - investigation recommendation
 - explanatory context
 
-The goal is to give the analyst a clear starting point for investigation instead of forcing them to interpret raw telemetry alone.
+The goal is to turn raw telemetry into an investigation starting point: identify the signal, understand its context, and decide what deserves attention.
 
 ---
 
@@ -184,7 +186,7 @@ The goal is to give the analyst a clear starting point for investigation instead
 
 ---
 
-# 🧠 Technical Deep Dive
+# 🧠 Engineering Deep Dive
 
 ## Frontend
 
@@ -219,6 +221,8 @@ The goal is to give the analyst a clear starting point for investigation instead
 ---
 
 # 📡 API Surface
+
+The API forms the contract between telemetry collection, event persistence, and the React client.
 
 | Method | Endpoint | Purpose |
 |---|---|---|
@@ -328,6 +332,8 @@ The project is intended to demonstrate how system and network signals can be col
 
 # 🔮 Future Engineering
 
+The roadmap focuses on increasing detection depth and operational usefulness rather than adding UI features for their own sake.
+
 Planned directions include:
 
 - Real-time packet capture and deeper packet inspection
@@ -358,13 +364,13 @@ React Visualization
 Analyst Investigation Workflow
 ~~~
 
-This makes the project useful as a demonstration of **Python engineering + networking + cybersecurity concepts + full-stack integration**, rather than only frontend development.
+NetSentinel demonstrates **Python engineering, networking, cybersecurity concepts, API design, data persistence, and full-stack integration** — not only frontend development.
 
 ---
 
 # 👤 Author
 
-**Mumtaz Fatima**
+Built and documented by **Mumtaz Fatima**.
 
 CSE (AI & ML) · AI & Cybersecurity
 
