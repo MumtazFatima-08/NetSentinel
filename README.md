@@ -55,26 +55,26 @@ The interface is organized around a lightweight SOC workflow — moving from sys
 
 | Network Operations Center | Endpoint Visibility |
 |---|---|
-| <img src="./docs/screenshots/dashboard.jpg" alt="NetSentinel Dashboard" width="100%"> | <img src="./docs/screenshots/devices.jpg" alt="NetSentinel Device Discovery" width="100%"> |
+| <img src="./docs/screenshots/dashboard.webp" alt="NetSentinel Dashboard" width="100%"> | <img src="./docs/screenshots/devices.webp" alt="NetSentinel Device Discovery" width="100%"> |
 | **Network health, telemetry, active connections and threat queue.** | **Connected endpoints, interfaces, packet counts and asset posture.** |
 
 ### Traffic + Threat Detection
 
 | Traffic Monitoring | Threat Investigation |
 |---|---|
-| <img src="./docs/screenshots/traffic.jpg" alt="NetSentinel Traffic Monitor" width="100%"> | <img src="./docs/screenshots/threats.jpg" alt="NetSentinel Threat Detection" width="100%"> |
+| <img src="./docs/screenshots/traffic.webp" alt="NetSentinel Traffic Monitor" width="100%"> | <img src="./docs/screenshots/threats.webp" alt="NetSentinel Threat Detection" width="100%"> |
 | **Bandwidth movement, upload/download activity and packet trends.** | **Severity, affected device, timestamp, recommendation and explanation.** |
 
 ### Analytics + Reporting
 
 | Operational Analytics | Reporting |
 |---|---|
-| <img src="./docs/screenshots/analytics.jpg" alt="NetSentinel Analytics" width="100%"> | <img src="./docs/screenshots/reports.jpg" alt="NetSentinel Reports" width="100%"> |
+| <img src="./docs/screenshots/analytics.webp" alt="NetSentinel Analytics" width="100%"> | <img src="./docs/screenshots/reports.webp" alt="NetSentinel Reports" width="100%"> |
 | **Trend-oriented views for monitoring activity.** | **Export-oriented PDF and CSV workflow.** |
 
 ### Monitoring Preferences
 
-<img src="./docs/screenshots/settings.jpg" alt="NetSentinel Settings" width="100%">
+<img src="./docs/screenshots/settings.webp" alt="NetSentinel Settings" width="100%">
 
 > **Appearance and refresh controls can be configured from the monitoring settings.**
 
