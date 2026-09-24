@@ -3,290 +3,379 @@
 > **See your network. Understand every threat.**
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-NetSentinel-0f766e?style=for-the-badge)](https://nsnl.netlify.app/)
-[![Backend API](https://img.shields.io/badge/Backend-Flask-111827?style=for-the-badge)](https://nsnl-backend.onrender.com)
-[![Frontend](https://img.shields.io/badge/Frontend-React-111827?style=for-the-badge)](https://nsnl.netlify.app/)
+[![Backend API](https://img.shields.io/badge/API-Flask-111827?style=for-the-badge&logo=flask&logoColor=white)](https://nsnl-backend.onrender.com)
+[![Frontend](https://img.shields.io/badge/Frontend-React-111827?style=for-the-badge&logo=react&logoColor=61DAFB)](https://nsnl.netlify.app/)
+[![Python](https://img.shields.io/badge/Backend-Python-111827?style=for-the-badge&logo=python&logoColor=3776AB)](https://www.python.org/)
 
-NetSentinel AI is a full-stack cybersecurity monitoring dashboard that brings **system telemetry, endpoint discovery, network activity, security events, analytics, and reporting** into a single SOC-style interface.
+**NetSentinel AI** is a full-stack cybersecurity monitoring platform that combines **endpoint telemetry, device discovery, network activity, security events, analytics, and reporting** inside a SOC-style interface.
 
-It is built as a practical security-monitoring project rather than a static dashboard: a Python/Flask backend collects and processes monitoring data, while a React frontend turns those signals into operational views.
+Instead of treating monitoring as a collection of disconnected metrics, NetSentinel is designed around an analyst workflow:
+
+> **Observe → Identify → Investigate → Respond**
+
+The project combines a Python/Flask monitoring backend with a React dashboard to turn low-level system and network signals into readable security views.
 
 ---
 
-## ✦ Why NetSentinel?
+## ✦ What Problem Does It Solve?
 
-Network monitoring becomes difficult when telemetry, connected devices, traffic information, and security events are spread across different tools.
+Security telemetry can quickly become difficult to interpret when system health, connected devices, network traffic, and security findings live in separate places.
 
-NetSentinel brings these signals together so an analyst can move from:
+NetSentinel brings these signals into one operational interface so an analyst can answer:
 
-**What is happening? → Which device is involved? → Is it suspicious? → What should I investigate?**
+- **What is happening on the monitored system?**
+- **Which endpoints are visible?**
+- **How is network traffic changing?**
+- **Which events require investigation?**
+- **What context or response guidance is available?**
 
-### Core capabilities
+---
 
-| Capability | What NetSentinel provides |
+## 🧭 Platform at a Glance
+
+| Module | Purpose |
 |---|---|
-| 🖥️ Endpoint visibility | Connected devices, IP, MAC, vendor, status, risk and last-seen data |
-| 📡 Telemetry | CPU, disk, interfaces, packets and active connections |
-| 🌐 Traffic monitoring | Upload/download activity, bandwidth trends and packet volume |
-| 🚨 Threat monitoring | Severity-based security events with context and response guidance |
-| 📊 Analytics | Network-health, bandwidth and device-activity visualizations |
-| 📄 Reporting | PDF/CSV-oriented reporting workflow |
-| ⚙️ Monitoring controls | Refresh interval and appearance preferences |
+| 🖥️ **Dashboard** | Network health, system telemetry, active connections and threat queue |
+| 🔎 **Devices** | Endpoint discovery, IP/MAC information, status and risk indicators |
+| 📡 **Traffic** | Upload/download activity, packet volume and bandwidth history |
+| 🚨 **Threats** | Security findings with severity, context and response guidance |
+| 📊 **Analytics** | Visual analysis of network and device activity |
+| 📄 **Reports** | PDF/CSV-oriented reporting workflow |
+| ⚙️ **Settings** | Appearance and monitoring preferences |
 
 ---
 
-## 🖥️ Product Showcase
+# 🖥️ Product Showcase
 
-The deployed interface is organized as a lightweight SOC workflow rather than a single statistics page.
+The interface is organized as a lightweight SOC workflow rather than a single dashboard screen.
 
-**Dashboard** → network health and active threat overview  
-**Devices** → endpoint discovery and asset posture  
-**Traffic** → live bandwidth and application movement  
-**Threats** → findings, severity and response guidance  
-**Analytics** → operational trends across devices and traffic  
-**Reports** → export-ready monitoring data  
-**Settings** → monitoring preferences
+### Dashboard + Device Discovery
 
-> The following captures are from the deployed NetSentinel interface.
-
-| Dashboard | Device Discovery |
+| Network Operations Center | Endpoint Visibility |
 |---|---|
 | <img src="./docs/screenshots/dashboard.webp" alt="NetSentinel Dashboard" width="100%"> | <img src="./docs/screenshots/devices.webp" alt="NetSentinel Device Discovery" width="100%"> |
-| **Network health, telemetry, active connections and threat queue.** | **Connected endpoints and asset posture.** |
+| **Network health, telemetry, active connections and threat queue.** | **Connected endpoints, interfaces, packet counts and asset posture.** |
 
-| Traffic Monitor | Threat Detection |
+### Traffic + Threat Detection
+
+| Traffic Monitoring | Threat Investigation |
 |---|---|
 | <img src="./docs/screenshots/traffic.webp" alt="NetSentinel Traffic Monitor" width="100%"> | <img src="./docs/screenshots/threats.webp" alt="NetSentinel Threat Detection" width="100%"> |
-| **Live upload/download activity, packets and bandwidth history.** | **Findings with severity, affected device, recommendations and explanations.** |
+| **Bandwidth movement, upload/download activity and packet trends.** | **Severity, affected device, timestamp, recommendation and explanation.** |
 
-| Analytics | Reports |
+### Analytics + Reporting
+
+| Operational Analytics | Reporting |
 |---|---|
 | <img src="./docs/screenshots/analytics.webp" alt="NetSentinel Analytics" width="100%"> | <img src="./docs/screenshots/reports.webp" alt="NetSentinel Reports" width="100%"> |
-| **Operational trends across bandwidth and device activity.** | **PDF/CSV-oriented reporting workflow.** |
+| **Trend-oriented views for monitoring activity.** | **Export-oriented PDF and CSV workflow.** |
 
 ### Monitoring Preferences
 
 <img src="./docs/screenshots/settings.webp" alt="NetSentinel Settings" width="100%">
 
-**Refresh interval and appearance controls for the monitoring experience.**
+> **Appearance and refresh controls can be configured from the monitoring settings.**
 
 ---
 
-## 🔍 Threat Detection Workflow
+# 🚨 Threat Detection
 
-NetSentinel currently presents findings such as:
+The threat module is designed to provide more context than a simple alert counter.
 
-- **Possible Port Scan** — rapid connection attempts across multiple ports
-- **Unusual Bandwidth Spike** — outbound throughput exceeding a monitored baseline
+Current example findings include:
 
-Each finding can expose:
+### Possible Port Scan
+Rapid connection attempts across multiple ports.
 
-- severity
+**Context exposed**
 - affected device
 - timestamp
-- recommendation
-- explanation/context
+- severity
+- investigation recommendation
+- explanatory context
 
-This makes the threat view an **investigation starting point**, rather than only displaying an alert counter.
+### Unusual Bandwidth Spike
+Outbound throughput exceeding a monitored baseline.
 
----
+**Context exposed**
+- affected device
+- timestamp
+- severity
+- investigation recommendation
+- explanatory context
 
-## ⚙️ How It Works
-
-```text
-┌─────────────────────────────┐
-│       Monitored Host        │
-│ CPU • Disk • Network • OS   │
-└──────────────┬──────────────┘
-               │
-               ▼
-┌─────────────────────────────┐
-│ Telemetry & Discovery       │
-│ psutil • Scapy • nmap       │
-└──────────────┬──────────────┘
-               │
-               ▼
-┌─────────────────────────────┐
-│       Flask Backend         │
-│ Collection • Processing     │
-│ Events • Device Discovery   │
-└──────────────┬──────────────┘
-               │
-               ▼
-┌─────────────────────────────┐
-│          REST API           │
-│ Telemetry • Security Events │
-└──────────────┬──────────────┘
-               │
-               ▼
-┌─────────────────────────────┐
-│       React SOC UI          │
-│ Devices • Traffic • Threats │
-│ Analytics • Reports         │
-└─────────────────────────────┘
-```
-
-The frontend consumes backend data and turns it into dedicated monitoring views.
+The goal is to give the analyst a clear starting point for investigation instead of forcing them to interpret raw telemetry alone.
 
 ---
 
-## 🏗️ Architecture
+# ⚙️ How It Works
 
-```text
-                    ┌──────────────────────┐
-                    │    Monitored Host    │
-                    │ CPU / Disk / Network │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ Telemetry Collection │
-                    │ psutil / Scapy / nmap│
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │    Flask Backend     │
-                    │ Events + Processing  │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │       REST API       │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │    React Frontend    │
-                    │    SOC Dashboard     │
-                    └──────────────────────┘
-```
-
----
-
-## 🧠 Technical Deep Dive
-
-### Frontend
-- React
-- Vite
-- Tailwind CSS
-- Recharts
-- Framer Motion
-
-### Backend
-- Python
-- Flask
-- Flask-CORS
-- REST API architecture
-
-### Monitoring & Network Layer
-- **psutil** — system and network telemetry
-- **Scapy** — packet/network analysis capabilities
-- **python-nmap** — network discovery
-- **SQLite** — event persistence
-
-### Deployment
-- Netlify frontend
-- Render backend
+~~~
+┌──────────────────────────────┐
+│        Monitored Host        │
+│  CPU • Disk • Network • OS   │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│    Telemetry & Discovery     │
+│   psutil • Scapy • nmap      │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│        Flask Backend         │
+│ Collection • Processing      │
+│ Events • Device Discovery    │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│          REST API            │
+│ Telemetry • Security Events  │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│         React SOC UI         │
+│ Devices • Traffic • Threats  │
+│ Analytics • Reports          │
+└──────────────────────────────┘
+~~~
 
 ---
 
-## 📡 API Surface
+# 🏗️ Architecture
+
+~~~
+                         NETSENTINEL
+                              │
+                ┌─────────────┴─────────────┐
+                │                           │
+                ▼                           ▼
+       ┌─────────────────┐        ┌─────────────────┐
+       │  System Signals │        │ Network Signals │
+       │ CPU / Disk / OS │        │ Packets / Ports │
+       └────────┬────────┘        └────────┬────────┘
+                │                          │
+                └────────────┬─────────────┘
+                             ▼
+                  ┌─────────────────────┐
+                  │ Telemetry Layer     │
+                  │ psutil / Scapy /    │
+                  │ python-nmap         │
+                  └──────────┬──────────┘
+                             ▼
+                  ┌─────────────────────┐
+                  │ Flask Backend       │
+                  │ Processing + Events │
+                  │ SQLite Persistence  │
+                  └──────────┬──────────┘
+                             ▼
+                  ┌─────────────────────┐
+                  │ REST API            │
+                  └──────────┬──────────┘
+                             ▼
+                  ┌─────────────────────┐
+                  │ React + Vite        │
+                  │ SOC Dashboard       │
+                  └─────────────────────┘
+~~~
+
+---
+
+# 🧠 Technical Deep Dive
+
+## Frontend
+
+- **React** — component-based application architecture
+- **Vite** — development and build tooling
+- **Tailwind CSS** — responsive interface styling
+- **Recharts** — telemetry and network visualizations
+- **Framer Motion** — interface motion and transitions
+
+## Backend
+
+- **Python**
+- **Flask**
+- **Flask-CORS**
+- REST API endpoints
+- Event persistence with **SQLite**
+
+## Monitoring & Network Layer
+
+| Technology | Role |
+|---|---|
+| **psutil** | CPU, disk, interface, socket and system telemetry |
+| **Scapy** | Packet/network analysis capabilities |
+| **python-nmap** | Network/device discovery |
+| **SQLite** | Local persistence for security events |
+
+## Deployment
+
+- **Frontend:** Netlify
+- **Backend:** Render
+
+---
+
+# 📡 API Surface
 
 | Method | Endpoint | Purpose |
 |---|---|---|
-| GET | `/api/telemetry` | Retrieve current telemetry |
-| GET | `/api/events` | Retrieve stored security events |
-| POST | `/api/events` | Create a security event |
-| DELETE | `/api/events/<event_id>` | Remove a stored event |
+| <code>GET</code> | <code>/api/telemetry</code> | Retrieve current telemetry |
+| <code>GET</code> | <code>/api/events</code> | Retrieve stored security events |
+| <code>POST</code> | <code>/api/events</code> | Create a security event |
+| <code>DELETE</code> | <code>/api/events/&lt;event_id&gt;</code> | Remove a stored event |
+
+The API keeps the frontend decoupled from the underlying monitoring and persistence layer.
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
-```text
+~~~
 NetSentinel/
+│
 ├── frontend/
-│   └── React + Vite dashboard
+│   ├── React + Vite application
+│   ├── Dashboard modules
+│   ├── Charts and visualizations
+│   └── UI components
+│
 ├── backend/
-│   └── Flask API, telemetry and event handling
+│   ├── Flask API
+│   ├── Telemetry collection
+│   ├── Network/device discovery
+│   ├── Security event handling
+│   └── SQLite persistence
+│
+├── docs/
+│   └── screenshots/
+│
 └── README.md
-```
+~~~
 
 ---
 
-## 🚀 Run Locally
+# 🚀 Run Locally
 
-### 1. Clone
+## 1. Clone the repository
 
-```bash
+~~~
 git clone https://github.com/MumtazFatima-08/NetSentinel.git
 cd NetSentinel
-```
+~~~
 
-### 2. Backend
+## 2. Start the backend
 
-```bash
+~~~
 cd backend
 python -m venv .venv
-```
+~~~
 
-**Windows PowerShell**
+### Windows PowerShell
 
-```powershell
+~~~
 .venv\Scripts\Activate.ps1
-```
+~~~
 
-```bash
+Then:
+
+~~~
 pip install -r requirements.txt
 python app.py
-```
+~~~
 
-### 3. Frontend
+## 3. Start the frontend
 
 Open a second terminal:
 
-```bash
+~~~
 cd frontend
 npm install
 npm run dev
-```
+~~~
+
+The frontend can then communicate with the local Flask API according to the project's environment configuration.
 
 ---
 
-## 🌐 Live Deployment
+# 🌐 Live Deployment
 
-**Frontend:** [nsnl.netlify.app](https://nsnl.netlify.app/)  
-**Backend:** [nsnl-backend.onrender.com](https://nsnl-backend.onrender.com)
-
----
-
-## ⚠️ Scope & Limitations
-
-NetSentinel is a **portfolio-grade monitoring project** and is not intended to replace a production SIEM, EDR, or enterprise SOC platform.
-
-Monitoring visibility depends on the operating system, available interfaces, permissions, network environment, and the detection/telemetry logic implemented in the current version.
+| Service | Link |
+|---|---|
+| **Frontend** | https://nsnl.netlify.app/ |
+| **Backend API** | https://nsnl-backend.onrender.com |
 
 ---
 
-## 🔮 Future Engineering
+# 🔐 Security & Scope
+
+NetSentinel is a **portfolio-grade cybersecurity monitoring project** and is not intended to replace a production SIEM, EDR, NDR or enterprise SOC platform.
+
+Actual monitoring visibility depends on:
+
+- operating system
+- network interfaces
+- local permissions
+- network environment
+- available telemetry
+- current detection logic
+
+The project is intended to demonstrate how system and network signals can be collected, processed, persisted and presented through a security-focused interface.
+
+---
+
+# 🔮 Future Engineering
+
+Planned directions include:
 
 - Real-time packet capture and deeper packet inspection
 - SIEM-style event correlation
-- Authentication and role-based access control
-- More advanced anomaly detection
-- Threat-intelligence integration
-- Persistent historical analytics
 - Configurable detection and alert rules
+- Authentication and role-based access control
+- Historical telemetry storage
+- More advanced anomaly detection
+- Threat-intelligence enrichment
+- Alert deduplication and correlation
+- Analyst-focused investigation timelines
 
 ---
 
-## 👤 Author
+# 🎯 Engineering Focus
 
-**Mumtaz Fatima**  
+~~~
+Operating System
+      ↓
+System / Network Telemetry
+      ↓
+Python Security Processing
+      ↓
+REST API
+      ↓
+React Visualization
+      ↓
+Analyst Investigation Workflow
+~~~
+
+This makes the project useful as a demonstration of **Python engineering + networking + cybersecurity concepts + full-stack integration**, rather than only frontend development.
+
+---
+
+# 👤 Author
+
+**Mumtaz Fatima**
+
 CSE (AI & ML) · AI & Cybersecurity
 
 [GitHub](https://github.com/MumtazFatima-08) · [LinkedIn](https://www.linkedin.com/in/mumtaz-fatima-112366325/)
 
 ---
 
-> **NetSentinel AI — See your network. Understand every threat.**
+<div align="center">
+
+### 🛡️ NetSentinel AI
+
+**See your network. Understand every threat.**
+
+</div>
