@@ -46,22 +46,28 @@ The deployed interface is organized as a lightweight SOC workflow rather than a 
 **Reports** → export-ready monitoring data  
 **Settings** → monitoring preferences
 
-> **Screenshot gallery:** the supplied captures show the actual deployed NetSentinel interface. The image files should be committed under `docs/screenshots/` so GitHub can render them directly here.
+> The following captures are from the deployed NetSentinel interface.
 
-### Dashboard
-*Network health, telemetry, active connections and the threat queue.*
+| Dashboard | Device Discovery |
+|---|---|
+| <img src="./docs/screenshots/dashboard.webp" alt="NetSentinel Dashboard" width="100%"> | <img src="./docs/screenshots/devices.webp" alt="NetSentinel Device Discovery" width="100%"> |
+| **Network health, telemetry, active connections and threat queue.** | **Connected endpoints and asset posture.** |
 
-### Device Discovery
-*Connected endpoints and their current asset posture.*
+| Traffic Monitor | Threat Detection |
+|---|---|
+| <img src="./docs/screenshots/traffic.webp" alt="NetSentinel Traffic Monitor" width="100%"> | <img src="./docs/screenshots/threats.webp" alt="NetSentinel Threat Detection" width="100%"> |
+| **Live upload/download activity, packets and bandwidth history.** | **Findings with severity, affected device, recommendations and explanations.** |
 
-### Traffic Monitor
-*Upload/download activity, packet volume and historical bandwidth.*
+| Analytics | Reports |
+|---|---|
+| <img src="./docs/screenshots/analytics.webp" alt="NetSentinel Analytics" width="100%"> | <img src="./docs/screenshots/reports.webp" alt="NetSentinel Reports" width="100%"> |
+| **Operational trends across bandwidth and device activity.** | **PDF/CSV-oriented reporting workflow.** |
 
-### Threat Detection
-*Security findings with severity, affected device, recommendation and explanation.*
+### Monitoring Preferences
 
-### Analytics
-*Long-range bandwidth and device-activity trends.*
+<img src="./docs/screenshots/settings.webp" alt="NetSentinel Settings" width="100%">
+
+**Refresh interval and appearance controls for the monitoring experience.**
 
 ---
 
