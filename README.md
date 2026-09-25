@@ -1,8 +1,9 @@
+# NetSentinel 
+
 <div align="center">
 
 <img src="docs/screenshots/dashboard.png" alt="NetSentinel AI — Dashboard" width="860"/>
 
-# NetSentinel 
 
 **See your network. Understand every threat.**
 
