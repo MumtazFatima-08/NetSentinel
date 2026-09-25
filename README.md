@@ -1,4 +1,4 @@
-# NetSentinel AI 🛡️
+# NetSentinel 🛡️
 
 > **See your network. Understand every threat.**
 
@@ -7,7 +7,7 @@
 [![Frontend](https://img.shields.io/badge/Frontend-React-111827?style=for-the-badge&logo=react&logoColor=61DAFB)](https://nsnl.netlify.app/)
 [![Python](https://img.shields.io/badge/Backend-Python-111827?style=for-the-badge&logo=python&logoColor=3776AB)](https://www.python.org/)
 
-**NetSentinel AI** is a full-stack cybersecurity monitoring platform that combines **endpoint telemetry, device discovery, network activity, security events, analytics, and reporting** inside a SOC-style interface.
+**NetSentinel** is a full-stack cybersecurity monitoring platform that combines **endpoint telemetry, device discovery, network activity, security events, analytics, and reporting** inside a SOC-style interface.
 
 Instead of treating monitoring as a collection of disconnected metrics, NetSentinel is designed around an analyst workflow:
 
@@ -51,32 +51,46 @@ NetSentinel brings these signals into one operational interface so an analyst ca
 
 The interface is organized around a lightweight SOC workflow — moving from system visibility to investigation context instead of presenting isolated metrics.
 
-### Dashboard + Device Discovery
+### Dashboard — Network Operations Center
+<img src="./docs/screenshots/dashboard.webp" alt="NetSentinel Dashboard" width="860">
+**Network health, host telemetry, active connections, traffic context and the current security event queue.**
 
-| Network Operations Center | Endpoint Visibility |
-|---|---|
-| <img src="./docs/screenshots/dashboard.webp" alt="NetSentinel Dashboard" width="100%"> | <img src="./docs/screenshots/devices.webp" alt="NetSentinel Device Discovery" width="100%"> |
-| **Network health, telemetry, active connections and threat queue.** | **Connected endpoints, interfaces, packet counts and asset posture.** |
+### Device Discovery — Endpoint Visibility
 
-### Traffic + Threat Detection
+<img src="./docs/screenshots/devices.webp" alt="NetSentinel Device Discovery" width="860">
+**Reachable local-network hosts, interface information, packet counters and device status.**
 
-| Traffic Monitoring | Threat Investigation |
-|---|---|
-| <img src="./docs/screenshots/traffic.webp" alt="NetSentinel Traffic Monitor" width="100%"> | <img src="./docs/screenshots/threats.webp" alt="NetSentinel Threat Detection" width="100%"> |
-| **Bandwidth movement, upload/download activity and packet trends.** | **Severity, affected device, timestamp, recommendation and explanation.** |
+> Device discovery currently uses lightweight TCP connection probes rather than a full ARP/Nmap sweep.
 
-### Analytics + Reporting
+### Traffic Monitor
 
-| Operational Analytics | Reporting |
-|---|---|
-| <img src="./docs/screenshots/analytics.webp" alt="NetSentinel Analytics" width="100%"> | <img src="./docs/screenshots/reports.webp" alt="NetSentinel Reports" width="100%"> |
-| **Trend-oriented views for monitoring activity.** | **Export-oriented PDF and CSV workflow.** |
+<img src="./docs/screenshots/traffic.webp" alt="NetSentinel Traffic Monitor" width="860">
+**Upload/download counters, packet activity and session-oriented traffic trends.**
+
+### Threat Detection
+
+<img src="./docs/screenshots/threats.webp" alt="NetSentinel Threat Detection" width="860">
+**Security event cards with severity, affected device, timestamp, recommendation and explanatory context.**
+
+> Current detections are template-based rather than model-driven or traffic-anomaly based.
+
+### Analytics
+
+<img src="./docs/screenshots/analytics.webp" alt="NetSentinel Analytics" width="860">
+**Visual analysis of network, protocol and device activity.**
+
+### Reports
+
+<img src="./docs/screenshots/reports.webp" alt="NetSentinel Reports" width="860">
+**Client-side reporting workflow with working CSV export and Dashboard PDF export.**
+
+> The Reports-page PDF control is currently a UI stub.
 
 ### Monitoring Preferences
 
-<img src="./docs/screenshots/settings.webp" alt="NetSentinel Settings" width="100%">
+<img src="./docs/screenshots/settings.webp" alt="NetSentinel Settings" width="860">
 
-> **Appearance and refresh controls can be configured from the monitoring settings.**
+> Dark/light mode is functional and persisted through localStorage. The displayed refresh setting is currently static.
 
 ---
 
@@ -87,7 +101,7 @@ The threat module is designed to provide more context than a simple alert counte
 Current example findings include:
 
 ### Possible Port Scan
-Rapid connection attempts across multiple ports.
+A template alert describing rapid connection activity across multiple ports.
 
 **Context exposed**
 - affected device
@@ -97,7 +111,7 @@ Rapid connection attempts across multiple ports.
 - explanatory context
 
 ### Unusual Bandwidth Spike
-Outbound throughput exceeding a monitored baseline.
+A template alert describing elevated bandwidth activity.
 
 **Context exposed**
 - affected device
@@ -106,7 +120,7 @@ Outbound throughput exceeding a monitored baseline.
 - investigation recommendation
 - explanatory context
 
-The goal is to turn raw telemetry into an investigation starting point: identify the signal, understand its context, and decide what deserves attention.
+> These current alerts are generated from the application's existing detection logic; they are not derived from packet-level anomaly scoring or a trained AI model.
 
 ---
 
@@ -380,7 +394,7 @@ CSE (AI & ML) · AI & Cybersecurity
 
 <div align="center">
 
-### 🛡️ NetSentinel AI
+### 🛡️ NetSentinel
 
 **See your network. Understand every threat.**
 
